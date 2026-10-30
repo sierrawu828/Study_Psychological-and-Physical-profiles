@@ -1,0 +1,16 @@
+panel,profile,profile_order,n,percent,mplus_class,measure,measure_order,estimate,se
+a,High Activity-High Resilience,1,7151,40.7,3,Psychological resilience,1,0.134,0.012
+a,High Activity-High Resilience,1,7151,40.7,3,MVPA,2,1.084,0.004
+a,High Activity-High Resilience,1,7151,40.7,3,LPA,3,0.366,0.004
+a,Low Activity-Low Resilience,2,2183,12.5,1,Psychological resilience,1,-0.295,0.023
+a,Low Activity-Low Resilience,2,2183,12.5,1,MVPA,2,-0.233,0.02
+a,Low Activity-Low Resilience,2,2183,12.5,1,LPA,3,-2.497,0
+a,Light Activity-Moderate Resilience,3,8198,46.8,2,Psychological resilience,1,-0.038,0.011
+a,Light Activity-Moderate Resilience,3,8198,46.8,2,MVPA,2,-0.881,0
+a,Light Activity-Moderate Resilience,3,8198,46.8,2,LPA,3,0.33,0.004
+b,High Activity-High Resilience,1,7151,40.7,3,Mobile phone addiction,1,29.711,0.106
+b,Low Activity-Low Resilience,2,2183,12.5,1,Mobile phone addiction,1,32.468,0.214
+b,Light Activity-Moderate Resilience,3,8198,46.8,2,Mobile phone addiction,1,30.825,0.1
+c,High Activity-High Resilience,1,7151,40.7,3,Anxiety,1,7.181,0.076
+c,Low Activity-Low Resilience,2,2183,12.5,1,Anxiety,1,9.604,0.18
+c,Light Activity-Moderate Resilience,3,8198,46.8,2,Anxiety,1,7.306,0.072

@@ -1,0 +1,30 @@
+TITLE: R3STEP analysis;
+DATA: FILE IS Sample1_data.dat;
+VARIABLE:
+    NAME ARE ZPR Zlog_MVPA Zlog_LPA
+    gender bmi_thin bmi_over bmi_obe
+    Household Onlychild sch_985 sch_211
+    MPA Anxiety;
+
+    USEVARIABLES = ZPR Zlog_MVPA Zlog_LPA;
+    CLASSES = C(3);                  
+    AUXILIARY =
+        gender (R3STEP)
+        bmi_thin (R3STEP)
+        bmi_over (R3STEP)
+        bmi_obe (R3STEP)
+        Household (R3STEP)
+        Onlychild (R3STEP)
+        sch_985 (R3STEP)
+        sch_211 (R3STEP);
+
+ANALYSIS:
+    TYPE = MIXTURE;
+    ESTIMATOR = MLR;
+    STARTS = 500 100;
+    PROCESSORS = 4;
+    OPTSEED =999;
+
+OUTPUT:
+    TECH11 TECH14;
+    CINTERVAL;

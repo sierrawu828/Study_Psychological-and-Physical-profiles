@@ -1,0 +1,54 @@
+TITLE: Order-constrained 3-profile model;
+DATA:
+    FILE = Sample2_data.dat;
+VARIABLE:
+    NAMES = ZPR Zlog_MVPA Zlog_LPA;
+    USEVARIABLES = ZPR Zlog_MVPA Zlog_LPA;
+    CLASSES = c(3);
+ANALYSIS:
+    TYPE = MIXTURE;
+    ESTIMATOR = MLR;
+
+    STARTS = 20000 5000;
+    STITERATIONS = 100;
+    ITERATIONS = 200;
+    MITERATIONS = 200;
+
+    STSEED = 999999;
+    PROCESSORS = 4;
+    
+MODEL:
+    %OVERALL%
+    ZPR Zlog_MVPA Zlog_LPA;
+
+    %c#1%
+    [Zlog_MVPA] (M1_MVPA);
+    [Zlog_LPA] (M1_LPA);
+    [ZPR] (M1_PR);
+
+    %c#2%
+    [Zlog_MVPA] (M2_MVPA);
+    [Zlog_LPA] (M2_LPA);
+    [ZPR] (M2_PR);
+
+    %c#3%
+    [Zlog_MVPA] (M3_MVPA);
+    [Zlog_LPA] (M3_LPA);
+    [ZPR] (M3_PR);
+
+    MODEL CONSTRAINT:
+
+        M1_MVPA > M2_MVPA;
+        M2_MVPA > M3_MVPA;
+
+        M1_LPA > M3_LPA;
+        M3_LPA > M2_LPA;
+
+        M1_PR > M3_PR;
+        M3_PR > M2_PR;
+
+OUTPUT:
+    TECH11;
+    TECH14;
+    SVALUES;
+    STANDARDIZED;
